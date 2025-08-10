@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Smart To-Do List</h1>
+            <p class="subtitle">Stay organized and productive</p>
+        </header>
+
+        <div class="input-section">
+            <div class="input-group">
+                <input type="text" id="taskInput" placeholder="Add a new task..." maxlength="100">
+                <button id="addBtn" class="add-btn" aria-label="Add task">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 5v14m-7-7h14" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="recommendations">
+                <span class="rec-title">Quick add:</span>
+                <button class="rec-btn" data-task="Complete project documentation">📄 Docs</button>
+                <button class="rec-btn" data-task="Review pull requests">🔍 Review</button>
+                <button class="rec-btn" data-task="Schedule team meeting">📅 Meeting</button>
+                <button class="rec-btn" data-task="Update project timeline">📊 Timeline</button>
+            </div>
+        </div>
+
+        <div class="stats">
+            <span id="totalTasks">0 tasks</span>
+            <span id="completedTasks">0 completed</span>
+        </div>
+
+        <div class="filter-tabs">
+            <button class="tab active" data-filter="all">All</button>
+            <button class="tab" data-filter="pending">Pending</button>
+            <button class="tab" data-filter="completed">Completed</button>
+        </div>
+
+        <ul id="taskList" class="task-list">
+            <!-- Tasks will be dynamically added here -->
+        </ul>
+
+        <div id="emptyState" class="empty-state">
+            <div class="empty-icon">📝</div>
+            <h3>No tasks yet</h3>
+            <p>Add your first task to get started!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
